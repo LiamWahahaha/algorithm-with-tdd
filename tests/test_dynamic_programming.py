@@ -1,5 +1,6 @@
 import unittest
 
+from dynamic_programming.house_robber import house_robber_top_down, house_robber_bottom_up
 from dynamic_programming.longest_common_subsequence import calculate_lcs_length_top_down, \
     calculate_lcs_length_bottom_up, find_lcs, find_all_lcs
 
@@ -16,6 +17,16 @@ class TestLongestCommonSubsequence(unittest.TestCase):
     def test_find_all_lcs(self):
         self.assertEqual({"MJAU"}, find_all_lcs("XMJYAUZ", "MZJAWXU"))
         self.assertEqual({"BCAB", "BCBA", "BDAB"}, find_all_lcs("ABCBDAB", "BDCABA"))
+
+
+class TestHouseRobber(unittest.TestCase):
+    def test_house_robber_top_down(self):
+        self.assertEqual(4, house_robber_top_down([1, 2, 3, 1]))
+        self.assertEqual(12, house_robber_top_down([2, 7, 9, 3, 1]))
+
+    def test_house_robber_bottom_up(self):
+        self.assertEqual(4, house_robber_bottom_up([1, 2, 3, 1]))
+        self.assertEqual(12, house_robber_bottom_up([2, 7, 9, 3, 1]))
 
 
 if __name__ == '__main__':
