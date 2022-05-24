@@ -28,3 +28,7 @@ def house_robber_bottom_up(nums):
         dp[idx] = max(dp[idx - 1], dp[idx - 2] + nums[idx])
 
     return dp[-1]
+
+
+def house_robber_ii_top_down(nums):
+    return max(house_robber_top_down(nums[:-1]), house_robber_top_down(nums[1:]))
